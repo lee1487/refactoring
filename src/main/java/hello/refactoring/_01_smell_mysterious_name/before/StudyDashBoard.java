@@ -24,11 +24,15 @@ public class StudyDashBoard {
 	 * @throws IOException
 	 */
 
-	private void loadReviews(GHIssue issue) throws IOException {
-		List<GHIssueComment> comments = issue.getComments();
-		for (GHIssueComment comment : comments) {
-			usernames.add(comment.getUserName());
-			reviews.add(comment.getBody());
+	private void loadReviews() throws IOException {
+		GitHub gitHub = GitHub.connect();
+		GHRepository repository = gitHub.getRepository("whiteship/live-study");
+		GHIssue issue = repository.getIssue(30);
+		
+		List<GHIssueComment> reviews = issue.getComments();
+		for (GHIssueComment review : reviews) {
+			usernames.add(review.getUserName());
+			this.reviews.add(review.getBody());
 			
 		}
 	}
@@ -42,12 +46,8 @@ public class StudyDashBoard {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		GitHub gitHub = GitHub.connect();
-		GHRepository repository = gitHub.getRepository("whiteship/live-study");
-		GHIssue issue = repository.getIssue(30);
-		
 		StudyDashBoard studyDashBoard = new StudyDashBoard();
-		studyDashBoard.loadReviews(issue);
+		studyDashBoard.loadReviews();
 		studyDashBoard.getUsernames().forEach(System.out::println);
 		studyDashBoard.getReviews().forEach(System.out::println);
 	}
