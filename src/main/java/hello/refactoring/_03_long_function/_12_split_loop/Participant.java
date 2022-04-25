@@ -1,4 +1,4 @@
-package hello.refactoring._03_long_function._11_decompose_conditional;
+package hello.refactoring._03_long_function._12_split_loop;
 
 import java.util.HashMap;
 import java.util.Map;
