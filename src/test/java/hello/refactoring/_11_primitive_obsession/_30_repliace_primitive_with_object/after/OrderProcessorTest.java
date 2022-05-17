@@ -1,10 +1,13 @@
-package hello.refactoring._11_primitive_obsession._30_repliace_primitive_with_object.before;
+package hello.refactoring._11_primitive_obsession._30_repliace_primitive_with_object.after;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+
+import hello.refactoring._11_primitive_obsession._30_repliace_primitive_with_object.after.Order;
+import hello.refactoring._11_primitive_obsession._30_repliace_primitive_with_object.after.OrderProcessor;
 
 class OrderProcessorTest {
 
