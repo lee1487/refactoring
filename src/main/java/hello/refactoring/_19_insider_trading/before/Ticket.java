@@ -1,4 +1,4 @@
-package hello.refactoring._19_insider_trading.after;
+package hello.refactoring._19_insider_trading.before;
 
 import java.time.LocalDate;
 
@@ -11,19 +11,14 @@ public class Ticket {
 		this.purchasesDate = purchasesDate;
 		this.prime = prime;
 	}
-
+	
 	public LocalDate getPurchasesDate() {
 		return purchasesDate;
 	}
-
+	
 	public boolean isPrime() {
 		return prime;
 	}
-
-	public boolean isFastPass() {
-		LocalDate earlyBirdDate = LocalDate.of(2022, 1, 1);
-		return isPrime() && getPurchasesDate().isBefore(earlyBirdDate);
-	}
-
-
+	
+	
 }
